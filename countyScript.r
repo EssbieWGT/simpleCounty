@@ -29,3 +29,6 @@ votes = read.csv("https://raw.githubusercontent.com/tonmcg/US_County_Level_Elect
 votes = merge(countyMarch,votes,by.x="fips",by.y="combined_fips",all.x=TRUE)
 votes$party = ifelse(votes$per_dem>votes$per_gop,"Blue","Red")
 votes$party = ifelse(votes$county=="New York City","Blue",votes$party)
+
+#output to csv 
+write.csv(votes,"countyCOVIDPolitical.csv")
